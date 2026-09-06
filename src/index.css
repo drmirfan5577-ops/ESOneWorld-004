@@ -1,0 +1,408 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Default: Crystal Clear White Theme */
+    --background: 0 0% 98%;
+    --foreground: 220 25% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 10%;
+    --primary: 215 90% 42%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 30% 93%;
+    --secondary-foreground: 220 25% 20%;
+    --muted: 210 25% 95%;
+    --muted-foreground: 215 15% 50%;
+    --accent: 215 85% 55%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 85% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 210 20% 88%;
+    --input: 210 20% 88%;
+    --ring: 215 90% 42%;
+    --radius: 1rem;
+
+    /* Theme Variables */
+    --theme-bg-from: 210 100% 97%;
+    --theme-bg-to: 200 60% 94%;
+    --theme-accent: 215 90% 42%;
+    --theme-glow: rgba(59, 130, 246, 0.3);
+    --theme-glass: rgba(255, 255, 255, 0.75);
+    --theme-border: rgba(255, 255, 255, 0.8);
+    --theme-text: #0f172a;
+    --theme-subtext: #475569;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 215 90% 42%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 30% 93%;
+    --sidebar-accent-foreground: 220 25% 20%;
+    --sidebar-border: 210 20% 88%;
+    --sidebar-ring: 215 90% 42%;
+  }
+
+  .dark {
+    --background: 222 47% 8%;
+    --foreground: 210 40% 96%;
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 96%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 96%;
+    --primary: 215 85% 60%;
+    --primary-foreground: 222 47% 8%;
+    --secondary: 217 33% 18%;
+    --secondary-foreground: 210 40% 96%;
+    --muted: 217 33% 18%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 215 85% 60%;
+    --accent-foreground: 222 47% 8%;
+    --destructive: 0 63% 40%;
+    --destructive-foreground: 210 40% 96%;
+    --border: 217 33% 20%;
+    --input: 217 33% 20%;
+    --ring: 215 85% 60%;
+    --sidebar-background: 222 47% 8%;
+    --sidebar-foreground: 210 40% 96%;
+    --sidebar-primary: 215 85% 60%;
+    --sidebar-primary-foreground: 222 47% 8%;
+    --sidebar-accent: 217 33% 18%;
+    --sidebar-accent-foreground: 210 40% 96%;
+    --sidebar-border: 217 33% 20%;
+    --sidebar-ring: 215 85% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+  .urdu-text {
+    font-family: 'Noto Nastaliq Urdu', serif;
+    direction: rtl;
+  }
+  .arabic-text {
+    font-family: 'Amiri', serif;
+    direction: rtl;
+  }
+}
+
+/* ============ THEMES ============ */
+.theme-crystal-white {
+  --theme-bg-from: 210 100% 98%;
+  --theme-bg-to: 200 60% 95%;
+  --theme-accent: 215 90% 42%;
+  --theme-glow: rgba(59, 130, 246, 0.25);
+  --theme-glass: rgba(255, 255, 255, 0.8);
+  --theme-border: rgba(255, 255, 255, 0.9);
+}
+.theme-emerald {
+  --theme-bg-from: 152 80% 95%;
+  --theme-bg-to: 160 60% 90%;
+  --theme-accent: 152 76% 32%;
+  --theme-glow: rgba(5, 150, 80, 0.3);
+  --theme-glass: rgba(240, 255, 248, 0.8);
+  --theme-border: rgba(200, 255, 230, 0.9);
+}
+.theme-crimson {
+  --theme-bg-from: 0 80% 97%;
+  --theme-bg-to: 10 70% 93%;
+  --theme-accent: 0 85% 45%;
+  --theme-glow: rgba(220, 38, 38, 0.3);
+  --theme-glass: rgba(255, 245, 245, 0.8);
+  --theme-border: rgba(255, 220, 220, 0.9);
+}
+.theme-royal-blue {
+  --theme-bg-from: 215 100% 95%;
+  --theme-bg-to: 225 80% 88%;
+  --theme-accent: 215 100% 40%;
+  --theme-glow: rgba(30, 64, 175, 0.3);
+  --theme-glass: rgba(239, 246, 255, 0.8);
+  --theme-border: rgba(191, 219, 254, 0.9);
+}
+.theme-golden-mosque {
+  --theme-bg-from: 45 100% 96%;
+  --theme-bg-to: 38 90% 90%;
+  --theme-accent: 38 92% 42%;
+  --theme-glow: rgba(202, 138, 4, 0.35);
+  --theme-glass: rgba(255, 251, 235, 0.85);
+  --theme-border: rgba(253, 230, 138, 0.9);
+}
+.theme-pakistan-green {
+  --theme-bg-from: 145 70% 94%;
+  --theme-bg-to: 150 60% 88%;
+  --theme-accent: 145 75% 28%;
+  --theme-glow: rgba(4, 120, 50, 0.35);
+  --theme-glass: rgba(240, 253, 244, 0.85);
+  --theme-border: rgba(167, 243, 208, 0.9);
+}
+.theme-holographic {
+  --theme-bg-from: 280 80% 96%;
+  --theme-bg-to: 200 80% 94%;
+  --theme-accent: 250 85% 55%;
+  --theme-glow: rgba(139, 92, 246, 0.3);
+  --theme-glass: rgba(248, 245, 255, 0.8);
+  --theme-border: rgba(221, 214, 254, 0.9);
+}
+.theme-sunset {
+  --theme-bg-from: 25 100% 96%;
+  --theme-bg-to: 15 90% 92%;
+  --theme-accent: 20 95% 45%;
+  --theme-glow: rgba(234, 88, 12, 0.3);
+  --theme-glass: rgba(255, 247, 237, 0.85);
+  --theme-border: rgba(254, 215, 170, 0.9);
+}
+
+/* ============ GLASSMORPHISM ============ */
+.glass-card {
+  background: var(--theme-glass, rgba(255,255,255,0.75));
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--theme-border, rgba(255,255,255,0.8));
+  box-shadow: 
+    0 8px 32px rgba(31,38,135,0.1),
+    0 2px 8px rgba(31,38,135,0.05),
+    inset 0 1px 0 rgba(255,255,255,0.9),
+    inset 0 -1px 0 rgba(0,0,0,0.05);
+}
+
+.glass-card-deep {
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(30px) saturate(200%);
+  -webkit-backdrop-filter: blur(30px) saturate(200%);
+  border: 1px solid rgba(255,255,255,0.85);
+  box-shadow: 
+    0 20px 60px rgba(31,38,135,0.12),
+    0 4px 16px rgba(31,38,135,0.08),
+    inset 0 2px 0 rgba(255,255,255,1),
+    inset 0 -1px 0 rgba(0,0,0,0.04);
+}
+
+/* ============ APP ICON BUTTONS (3D Carved Keyboard Style) ============ */
+.app-icon-btn {
+  position: relative;
+  background: linear-gradient(145deg, rgba(255,255,255,0.95), rgba(240,248,255,0.9));
+  border: 1px solid rgba(255,255,255,0.95);
+  border-radius: 18px;
+  box-shadow:
+    0 6px 20px rgba(31,38,135,0.12),
+    0 2px 6px rgba(31,38,135,0.08),
+    inset 0 2px 4px rgba(255,255,255,1),
+    inset 0 -3px 6px rgba(0,0,0,0.08),
+    inset 2px 0 4px rgba(255,255,255,0.8),
+    inset -2px 0 4px rgba(0,0,0,0.04);
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
+  overflow: hidden;
+}
+.app-icon-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 45%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 100%);
+  border-radius: 18px 18px 0 0;
+  pointer-events: none;
+}
+.app-icon-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow:
+    0 12px 30px rgba(31,38,135,0.2),
+    0 4px 10px rgba(31,38,135,0.12),
+    inset 0 2px 4px rgba(255,255,255,1),
+    inset 0 -2px 4px rgba(0,0,0,0.06);
+}
+.app-icon-btn:active {
+  transform: translateY(1px) scale(0.97);
+  box-shadow:
+    0 2px 8px rgba(31,38,135,0.12),
+    inset 0 3px 8px rgba(0,0,0,0.1),
+    inset 0 1px 3px rgba(0,0,0,0.08);
+}
+
+/* ============ GLOW EFFECTS ============ */
+.glow-blue { filter: drop-shadow(0 0 8px rgba(59,130,246,0.6)); }
+.glow-green { filter: drop-shadow(0 0 8px rgba(5,150,80,0.6)); }
+.glow-gold { filter: drop-shadow(0 0 8px rgba(202,138,4,0.6)); }
+.glow-crimson { filter: drop-shadow(0 0 8px rgba(220,38,38,0.6)); }
+
+/* ============ ANIMATED TICKER ============ */
+@keyframes ticker-scroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+.ticker-animate {
+  animation: ticker-scroll 30s linear infinite;
+  white-space: nowrap;
+}
+
+/* ============ LIVE PULSE ============ */
+@keyframes live-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.live-dot {
+  animation: live-pulse 1.2s ease-in-out infinite;
+}
+
+/* ============ GRADIENT BACKGROUNDS ============ */
+.bg-crystal {
+  background: linear-gradient(135deg, 
+    hsl(210, 100%, 98%) 0%, 
+    hsl(200, 80%, 96%) 30%,
+    hsl(215, 100%, 97%) 60%, 
+    hsl(190, 60%, 95%) 100%);
+}
+.bg-emerald-glass {
+  background: linear-gradient(135deg, 
+    hsl(152, 80%, 95%) 0%, 
+    hsl(160, 70%, 92%) 50%,
+    hsl(145, 60%, 94%) 100%);
+}
+.bg-crimson-glass {
+  background: linear-gradient(135deg, 
+    hsl(0, 80%, 97%) 0%, 
+    hsl(10, 70%, 95%) 50%,
+    hsl(350, 80%, 96%) 100%);
+}
+.bg-royal-glass {
+  background: linear-gradient(135deg, 
+    hsl(215, 100%, 96%) 0%, 
+    hsl(225, 80%, 93%) 50%,
+    hsl(210, 90%, 95%) 100%);
+}
+.bg-golden-glass {
+  background: linear-gradient(135deg, 
+    hsl(45, 100%, 97%) 0%, 
+    hsl(38, 90%, 94%) 50%,
+    hsl(50, 80%, 96%) 100%);
+}
+
+/* ============ SCROLLBAR ============ */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(100,130,200,0.3); border-radius: 2px; }
+
+/* ============ BOTTOM NAV ============ */
+.bottom-nav-item {
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.bottom-nav-item.active {
+  transform: translateY(-4px);
+}
+
+/* ============ SHIMMER ============ */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.shimmer-text {
+  background: linear-gradient(90deg, #1e40af 0%, #7c3aed 25%, #0ea5e9 50%, #059669 75%, #1e40af 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* ============ GLASS SIDEBAR ============ */
+.sidebar-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.2);
+  backdrop-filter: blur(4px);
+  z-index: 50;
+}
+.sidebar-panel {
+  position: fixed;
+  top: 0; bottom: 0;
+  width: 300px;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(40px) saturate(200%);
+  border: 1px solid rgba(255,255,255,0.95);
+  z-index: 51;
+  overflow-y: auto;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 60px rgba(31,38,135,0.15);
+}
+.sidebar-left { left: 0; border-right: 1px solid rgba(255,255,255,0.9); }
+.sidebar-right { right: 0; border-left: 1px solid rgba(255,255,255,0.9); }
+
+/* ============ STAR BUTTON ============ */
+.star-btn {
+  background: linear-gradient(135deg, rgba(255,215,0,0.9), rgba(255,165,0,0.8));
+  border: 2px solid rgba(255,255,255,0.9);
+  box-shadow: 0 4px 15px rgba(255,165,0,0.4), inset 0 1px 0 rgba(255,255,255,0.8);
+  transition: all 0.2s;
+}
+.star-btn:hover {
+  transform: rotate(36deg) scale(1.1);
+  box-shadow: 0 6px 20px rgba(255,165,0,0.6);
+}
+
+/* ============ FONT CLASSES ============ */
+.font-urdu { font-family: 'Noto Nastaliq Urdu', serif; }
+.font-arabic { font-family: 'Amiri', serif; }
+.font-en { font-family: 'Inter', sans-serif; }
+
+/* ============ NOTIFICATION BADGE ============ */
+.notif-badge {
+  position: absolute;
+  top: -4px; right: -4px;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  border-radius: 999px;
+  font-size: 9px;
+  font-weight: 700;
+  min-width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+  box-shadow: 0 2px 6px rgba(220,38,38,0.5);
+}
+
+/* ============ CATEGORY PILLS ============ */
+.cat-pill {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.cat-pill.active {
+  background: linear-gradient(135deg, #1e40af, #3b82f6);
+  color: white;
+  box-shadow: 0 4px 12px rgba(59,130,246,0.4);
+}
+.cat-pill:not(.active) {
+  background: rgba(255,255,255,0.7);
+  color: #374151;
+  border-color: rgba(0,0,0,0.1);
+}
+.cat-pill:hover:not(.active) {
+  background: rgba(255,255,255,0.9);
+  transform: translateY(-1px);
+}
+
+/* ============ PAGE TRANSITIONS ============ */
+.page-enter {
+  animation: pageIn 0.3s ease-out forwards;
+}
+@keyframes pageIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
